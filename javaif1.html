@@ -39,9 +39,9 @@
         else if(i<100){console.log('Menor que 100');}
         else{console.log('Igual que 100');}
         /////////////////////////////////////////////////////////////////
-        let n1=4;
-        let n2=2;
-        const op='p';
+        let n1=10;
+        let n2=3;
+        const op='/';
         if (n1===undefined){console.log('Introduzca un valor 1 válido');}
         else if(n2==='undefined'){console.log('Introduzca un valor 2 válido');}
         else{
@@ -50,6 +50,34 @@
             else if(op==='*'){console.log('Multiplicación = ',n1*n2);}
             else if (op==='/'){console.log('División = ',n1/n2);}
             else {console.log('Introduzca una operación válida (+, -, * o /)');}
+        }
+        /////////////////////////////////////////////////////////////////
+        const ejemploa=5;
+        const ejemplob=7;
+        
+        console.log(ejemploa>ejemplob ? 'a es mayor que b':'b es mayor que a');
+        /////////////////////////////////////////////////////////////////
+        const b=0;
+
+        console.log(b>=0 ?'b es positivo': 'b es negativo');
+        /////////////////////////////////////////////////////////////////
+        const j=10;
+
+        console.log(j%2===0 ? 'Es par' : 'Es impar');
+        /////////////////////////////////////////////////////////////////
+        const color='azul';
+        switch (color) {
+            case 'rojo':
+                console.log('Has escogido rojo');
+            break;
+            case 'azul':
+                console.log('Has escogido azul');
+            break;
+            case 'amarillo':
+                console.log('Has escogido amarillo');
+            break;
+            default:
+                console.log('Escoge un color válido');
         }
 
     </script>
