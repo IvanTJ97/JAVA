@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cubo=(n)=>{
+            r=n*n*n;
+            console.log('El cubo de',n,'es igual a',r);
+        }
+        cubo(2);
+        ////////////////////////
+        const metro=(km)=>{
+            m=km*1000;
+            console.log('La velocidad',km,'km/h equivale a',m,'m/h');
+        }
+        metro(10);
+        ///////////////////////
+        const area=(x,y)=>x*y;
+        let x=10;
+        let y=5;
+        console.log('Un rectángulo de base',x,'y altura',y, 'tendrá un área de',area(x,y));
+        //////////////////////
+        const areat=(b,h)=>{
+            at=b*h/2;
+            console.log('El área de un triángulo de base',b,'y de una altura',h,'tiene un área de',at)
+        }
+        areat(2,5);
+        /////////////////////////
+        const peri=(r)=>{
+            p=r*2*Math.PI;
+            a=Math.PI*r*r;
+            console.log('Una circumferencia de radio',r,'tiene un perímetro de',p,'y un área de',a);
+        }
+        peri(4/Math.PI);
+        ////////////////////////
+        function shout(input) {
+            console.log(input + input)
+            return input+input;
+            }
+        shout('Fire');
+        /////////////////
+        var a='fffffff';
+        console.log(a.length);
+        ///////////////////////
+        var a = ['p','g','d',4]
+        console.log(a.length);
+        ///////////////////////
+        var a = ['t', 'i', 8, 8]
+        console.log(a[0]);
+        ///////////////////////
+        var a = ['v','d','q','h']
+        console.log(a.indexOf('h'));
+    </script>
+</body>
+</html>

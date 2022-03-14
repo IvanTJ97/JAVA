@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            margin: 0;
+            background-image: url(imatges/bg.gif);
+        }
+        .container{
+            margin: auto;
+            width: 80%;
+            background-color: white;
+            border-radius: 10px;
+        }
+        header img{
+            float: left;
+        }
+        header ul{
+            list-style: none;
+            float:right;
+        }
+        li{
+            display: inline-block;
+        }
+        li a{
+            height: 40px;
+            display: inline-block;
+            text-decoration: none;
+            color:black;
+            transition: 1s;
+            padding: 10px;
+        }
+        li a:hover{
+            background-color: red;
+        }
+        .imagen img{
+            width: 100%;
+        }
+        h1{
+            text-align: center;
+        }
+        .articulos{
+            display: flex;
+            flex-direction: row;
+        }
+        .inferior{
+            padding: 20px;
+        }
+        .inferior img{
+            width:100%;
+        }
+        .inferior p{
+            text-align: justify;
+        }
+        h2{
+            color: red;
+        }
+        footer ul{
+            width: 100%;
+            text-align: right;
+        }
+        .enlace{
+            float: left;
+            padding-top: 10px;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="imatges/VUIT.png" alt="Titulo">
+            <nav>
+                <ul>
+                    <li><a href="#">Inici</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Albums</a></li>
+                    <li><a href="#">Contacte</a></li>
+                </ul>
+            </nav>
+        </header>
+        <article>
+            <div class="imagen">
+                <img src="imatges/imatge_slider1.jpg" alt="encabezado">
+            </div>
+            <h1>Ejercicio de HTML</h1>
+            <div class="articulos">
+                <div class="inferior">
+                    <h2>Div inferior</h2> 
+                    <img src="imatges/pantalles_vuit_app.png" alt="articulos">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, maxime at amet animi vel aperiam aliquid architecto quod quos. Voluptates quam aliquam sint dolores, rerum fugiat vel dolorem sed cumque. </p>
+                </div>
+                <div class="inferior">
+                    <h2>Div inferior</h2>
+                    <img src="imatges/pantalles_vuit_app.png" alt="articulos">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, maxime at amet animi vel aperiam aliquid architecto quod quos. Voluptates quam aliquam sint dolores, rerum fugiat vel dolorem sed cumque. </p>
+                </div>
+                <div class="inferior">
+                    <h2>Div inferior</h2>
+                    <img src="imatges/pantalles_vuit_app.png" alt="articulos">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, maxime at amet animi vel aperiam aliquid architecto quod quos. Voluptates quam aliquam sint dolores, rerum fugiat vel dolorem sed cumque. </p>
+                </div>
+            </div>
+        </article>
+        <footer>
+            <a class="enlace" href="#">Cibernarium.cat</a>
+            <nav>
+                <ul>
+                    <li><a href="#">Inici</a></li>
+                    <li><a href="#">Videos</a></li>
+                    <li><a href="#">Albums</a></li>
+                    <li><a href="#">Contacte</a></li>
+                </ul>
+            </nav>
+        </footer>
+    </div>
+</body>
+</html>

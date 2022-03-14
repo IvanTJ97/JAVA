@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function hoyquierocomer(comida){
+            console.log('Hoy quiero comer',comida);
+        }
+        hoyquierocomer('garbanzos');
+        /////////////////////////////
+        function cubo(numero){
+            r=numero*numero*numero;
+            console.log('El cubo de', numero, 'es igual a',r);
+        }
+        cubo(5);
+        ////////////////////////////
+        function velocidad(kilh){
+            m=kilh*1000;
+            console.log('La velocidad de',kilh+'km/h equivale a',m+'m/s');
+        }
+        velocidad(1);
+        ///////////////////////////
+        function area(base,altura){
+            a=base*altura;
+            console.log('El area de un rectángulo con base',base,'y altura',altura,'equivale a',a);
+        }
+        area(4,5);
+        /////////////////////////////
+        function areat(baset,alturat){
+            at=baset*alturat/2;
+            console.log('El area de un triángulo con base', baset, 'y altura', alturat, 'equivale a', at);
+        }
+        areat(4,5);
+        //////////////////////////////
+        function cercle(radius){
+            p=2*Math.PI*radius;
+            ac=Math.PI*radius*radius;
+            console.log('El perímetro de un círculo de radio',radius,'equivale a',p);
+            console.log('El área de un círculo de radio', radius, 'equivale a', ac)
+        }
+        cercle(10);
+    </script>
+    
+</body>
+</html>

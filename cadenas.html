@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log('wonderful day'.substring(3,7));
+        ///////////////////////////////////////
+        const devuelveMasLarga=(input1,input2)=>{
+            if(input1.length>input2.length){
+                console.log(input1);
+            }
+            else if(input1.length<input2.length){
+                console.log(input2);
+            }
+            else{console.log('Error')}
+        }
+        devuelveMasLarga('AAAAA','BBBB');
+        ////////////////////////////////////////////////////////////////////////
+        const devuelveMasLarga2=(input1,input2,input3)=>{
+            if (input1.length>input2.length&&input1.length>input3.length){
+                console.log(input1);}
+            else if(input2.length>input1.length&&input2.length>input3.length){
+                console.log(input2);}
+            else if(input3.length>input1.length&&input3.length>input2.length){
+                console.log(input3);}
+            else{console.log('Error')}
+        }
+        devuelveMasLarga2('AAAA','BBDDDB','CCCC');
+        ////////////////////////////////////////////////////////////
+        const generarNombre=(input1,input2,input3)=>{
+            if(input1.length<=5&&input2.length<=5&&input3.length<=5){
+                console.log(input1.substring(0,3)+input2.substring(0, 3)+input3.substring(0, 3));}
+            else{console.log('Error');}
+        }
+        generarNombre('AAAA','BBBBB','CCCCC');
+        ///////////////////////////////////////////////////////////
+        const generarNombre2=(input1,input2,input3)=>{
+            if (input1.length<=5&&input2.length<=5&&input3.length<=5){
+                console.log(input1.charAt(input1.length-1)+input2.charAt(input2.length-1).toLowerCase()+input3.charAt(input3.length-1).toLowerCase());
+            }
+            else{console.log('Error');}
+        }
+        generarNombre2('AAAR', 'BBBBA', 'CCCCM');
+        //////////////////////////////////////////////////////////
+        const tieneLetra=(input1,input2)=>(input1.indexOf(input2)>-1)
+        console.log(tieneLetra('AAA','a'));
+        ////////////////////////////////////////////////////////
+        const tieneLetra2=(input1,input2)=>(input1.toLowerCase().indexOf(input2.toLowerCase())>-1)
+        console.log(tieneLetra2('bba','A'));
+        ///////////////////////////////////////////////////////
+        const addGuiones=(input)=>{
+            let r=input.charAt(0);
+            for(let i=1;i<input.length;i=i+1){
+                r=r+'-'+input.charAt(i);
+            }
+            console.log(r);
+        }
+        addGuiones('Marinero');
+/////////////////////////////////////////////////////
+        const addGuiones2=(input)=>{
+            let s=input.charAt(0);
+            const a=input;
+            for (let i=0;i<input.length-1;i=i+1){
+            s=s.toUpperCase()+'-'+a.slice(i+1, i+2).toUpperCase();
+            }
+            return s
+        }
+        console.log(addGuiones2('Pelota'));
+        /////////////////////////////////////////////
+        const contadordeLetras=(input1,input2)=>{
+            let p=0;
+            for(let i=0;i<input1.length;i=i+1){
+                if(input1.charAt(i)===input2){
+                    p=p+1;
+                }
+            }
+            return p
+        }
+        console.log('En el texto introducido hay',contadordeLetras('arrraaaa','r'));
+
+        const contadordeLetras5=(input1,input2)=>{
+            let p=0;
+            for(let i=0;i<input1.length;i=i+1){
+                if(input1.toLowerCase().charAt(i)===input2.toLowerCase()){
+                    p=p+1;
+                }
+            }
+            return p
+        }
+        console.log(contadordeLetras5('RARARA','R'));
+        ///////////////////////////////////////////////
+        const contadordeLetras2=(input1,input2,input3)=>{
+            let p1=0;
+            let p2=0;
+            for(let i=0;i<input1.length;i=i+1){
+                if(input1.toLowerCase().charAt(i)===input3.toLowerCase()){
+                    p1=p1+1;
+                }
+            }
+            for(let j=0;j<input2.length;j=j+1){
+                if(input2.toLowerCase().charAt(j)===input3.toLowerCase()){
+                    p2=p2+1;
+                }
+            }
+            if(p1>p2){return input1}
+            else if(p2>p1){return input2}
+            else{return false}
+        }
+        console.log(contadordeLetras2('Abaaaaa','area','A'))
+        ////////////////////////////////////////////////////////////////////////////////
+        
+    </script>
+</body>
+</html>

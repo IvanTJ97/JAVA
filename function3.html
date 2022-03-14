@@ -10,7 +10,7 @@
     <script>
         const generarNombre=(a,b,c)=>{
             if(a.length<=5&&b.length<=5&&c.length<=5){
-                console.log(a.charAt(0).toUpperCase()+b.charAt(0).toLowerCase()+c.charAt(0).toLowerCase());
+                console.log(a.substring(0,3).toUpperCase()+b.substring(0, 3).toLowerCase()+c.substring(0, 3).toLowerCase());
             }
             else{
                 console.log('Error');
@@ -20,7 +20,7 @@
 ////////////////////////////////////////////////////////////////////////////////////////
         const funcion=(d,e,f)=>{
             if(d.length<=5&&e.length<=5&&f.length<=5){
-                return d.charAt(0).toUpperCase()+e.charAt(0).toLowerCase() +f.charAt(0).toLowerCase()
+                return d.substring(0,3).toUpperCase()+e.substring(0,3).toLowerCase() +f.substring(0,3).toLowerCase()
             }
             else{
                 return false

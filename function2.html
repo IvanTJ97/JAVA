@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const n='Wonderful Day';
+        console.log('Las letras que van desde la posición 3 hasta la 7 son',n.substring(3,7));
+    /////////////////////////////////////////////    
+        const letras=(palabra,a,b)=>{
+            if(palabra.length>=b&b>a){
+                return palabra.substring(a,b);
+            }
+        }
+        console.log(letras('abismo',0,2));
+//////////////////////////////////////////////////////
+        function secondIndexOf(input1, input2) {
+        const n=input1.indexOf(input2)+1;
+        return input1.indexOf(input2,n)
+        }
+        console.log(secondIndexOf('White Rabbit', 'it'));
+        //////////////////////////////////////////////
+        console.log('aa aa'.indexOf(' '));
+        ///////////////////////////////////////
+        function normalize(input) {
+        const a = input.replace('-', '/');
+        const b = a.replace('-', '/');
+        return b
+        }
+        console.log(normalize('20-05-2020-2022-2020250'));
+        //////////////////////////////////////////////
+        console.log('20-05-2020-2022-20200'.split('-').length-1);
+        console.log('20-05-2020'.match(RegExp('-','g')).length);
+
+        const norma=(fecha)=>{
+            let f=fecha;
+            for(i=0;i<=(fecha.match(RegExp('-', 'g')).length);i=i+1){
+                f=f.replace('-','/');
+            }
+            console.log(f);
+        }
+        norma('20-05-2020-2021-2022-2023-2024');
+    </script>
+</body>
+</html>
