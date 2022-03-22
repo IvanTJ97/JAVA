@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const cosas=['corazon','cara sonriente','sol'];
+        const hacercosas=(cosa)=>{
+            console.log(cosa);
+        }
+        cosas.forEach(hacercosas);
+        cosas.forEach((cosa)=>{
+            console.log(cosa);
+        });
+        //////////////////////////////////////
+        const numeros=[3,5,7];
+        let suma=0;
+        let cont=0;
+        numeros.forEach((numero)=>{
+            suma=suma+numero;
+            cont++;
+        })
+        console.log(suma/cont);
+        //////////////////////////////////////////////
+        const nombres=["Paco","Andres","Maria","Antonia","Virtudes"];
+        nombres.forEach((nombre)=>console.log("Conozco a alguien llamado",nombre));
+        ////////////////////////////////////////////////
+        const numeros2=[1,9,3,8,5,7];
+        numeros2.forEach((numero)=>console.log(numero*2));
+        ///////////////////////////////////////////////
+        const numeros3=[1,2,3,4,5,0,-4,-6,-8,-10];
+        let p=0;n=0;z=0;
+        numeros3.forEach((numero)=>{
+            if(numero>0){p++}
+            else if(numero<0){n++}
+            else{z++}
+        });
+        console.log("En este array hay",p,"positivos,",n,"negativos y",z,"zeros");
+        ///////////////////////////////////////////////////////
+        const numeros4=[1,2,3,4,5,-2,-4,-6,-8,-10];
+        p=0;n=0;z=0;
+        let p1=0;n1=0;
+        numeros4.forEach((numero)=>{
+            if(numero>0){p1=p1+numero;p++;}
+            else if(numero<0){n1=n1+numero;n++;}
+            else{z++}
+        });
+        console.log("La media de los positivos equivale a",p1/p,"y la de los negativos a",n1/n);
+    </script>
+</body>
+</html>

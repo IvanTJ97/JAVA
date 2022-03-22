@@ -8,35 +8,16 @@
 </head>
 <body>
     <script>
-        const generarNombre=(a,b,c)=>{
-            if(a.length<=5&&b.length<=5&&c.length<=5){
-                console.log(a.charAt(0).toUpperCase()+b.charAt(0).toLowerCase()+c.charAt(0).toLowerCase());
+        function sum(input) {
+            let p = 0;
+            for (let i = 0; i < input.length; i++) {
+                for (let j = 0; j < input[i].length; j++) {
+                    p = p + input[i][j];
+                }
             }
-            else{
-                console.log('Error');
-            }
+            return p
         }
-        generarNombre('Nieve','Aire','Vino');
-////////////////////////////////////////////////////////////////////////////////////////
-        const funcion=(d,e,f)=>{
-            if(d.length<=5&&e.length<=5&&f.length<=5){
-                return d.charAt(0).toUpperCase()+e.charAt(0).toLowerCase() +f.charAt(0).toLowerCase()
-            }
-            else{
-                return false
-            }
-        }  
-        console.log(funcion('Nieve','Aire','Vino'));
-        //////////////////////////////////////////////////////////////////////////////
-        const generarNombre2=(s1,s2,s3)=>{
-            if(s1.length<=5&&s2.length<=5&&s3.length<=5){
-                console.log(s1.charAt(s1.length-1).toUpperCase()+s2.charAt(s2.length-1).toLowerCase()+ s3.charAt(s3.length-1).toLowerCase());
-            }
-            else{
-                console.log('Error');
-            }
-        }
-        generarNombre2('aaaai','bcp','aa')
+        console.log(sum([[1,2],[3]]));
     </script>
 </body>
 </html>
