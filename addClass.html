@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .anim{
+            background-color: red;
+            width: 500px;
+            height: 500px;
+        }
+        input{
+            margin-bottom: 25px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+<body>
+    <input type="button" id="btn" value="Girar">
+    <div class="anim"></div>
+    <script>
+        const mover=()=>{
+            const obj=document.querySelector(".anim");
+            obj.classList.add("animate__animated","animate__swing");
+            obj.addEventListener("animationend",()=>{
+                obj.classList.remove("animate__animated", "animate__swing");
+            });
+        }  
+        document.querySelector("#btn").addEventListener("click",mover);
+    </script>
+</body>
+</html>

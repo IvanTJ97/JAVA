@@ -8,10 +8,10 @@
 </head>
 <body>
     <script>
-        let tablero=["o","o","o","o","o","o","o","o","o"];v1=0;v2=0;
+        let tablero=["_","_","_","_","_","_","_","_","_"];v1=0;v2=0;p=0;
         const printBoard=()=>{
             alert(tablero[0]+"|"+tablero[1]+"|"+tablero[2]+"\n"+tablero[3]+"|"+tablero[4]+"|"+tablero[5]+"\n"+tablero[6]+"|"+tablero[7]+"|"+tablero[8]);
-        };
+        }
         const pulsarjugador1=()=>{
             let continuar=true;
             alert('Turno del jugador 1');
@@ -20,45 +20,45 @@
                 let c=prompt('Jugador 1:Introduce el número de la columna');
                 if(f==1){
                     if(c==1){
-                        if(tablero[0]=="o"){tablero[0]=1;continuar=false;}
+                        if(tablero[0]=="_"){tablero[0]="x";continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==2){
-                        if(tablero[1]=="o"){tablero[1]=1;continuar=false;}
+                        if(tablero[1]=="_"){tablero[1]="x";continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==3){
-                        if(tablero[2]=="o"){tablero[2]=1;continuar=false;}
+                        if(tablero[2]=="_"){tablero[2]="x";continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else{alert('Error, has introducido un numero de columna que no existe');}
                 }
                 else if(f==2){
                     if(c==1){
-                        if(tablero[3]=="o"){tablero[3]=1;continuar=false;}
+                        if(tablero[3]=="_"){tablero[3]="x";continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==2) {
-                        if(tablero[4]=="o"){tablero[4]=1; continuar=false;}
+                        if(tablero[4]=="_"){tablero[4]="x"; continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==3){
-                        if(tablero[5]=="o"){tablero[5]=1;continuar=false;}
+                        if(tablero[5]=="_"){tablero[5]="x";continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else{alert('Error, has introducido un numero de columna que no existe');}
                 }
                 else if(f==3){
                     if(c==1){
-                        if(tablero[6]=="o"){tablero[6]=1;continuar=false;}
+                        if(tablero[6]=="_"){tablero[6]="x";continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==2){
-                        if(tablero[7]=="o"){tablero[7]=1;continuar=false;}
+                        if(tablero[7]=="_"){tablero[7]="x";continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c == 3) {
-                        if(tablero[8]=="o"){tablero[8]=1;continuar=false;}
+                        if(tablero[8]=="_"){tablero[8]="x";continuar=false;p++}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else{alert('Error, has introducido un numero de columna que no existe'); }
@@ -66,28 +66,25 @@
                 else{alert('Error, has introducido un numero de fila que no existe');}
             }
         }
-        const ganar1=()=>{
-            if(tablero[0]==1&&tablero[1]==1&&tablero[2]==1){v1=1;}
-            else if(tablero[3]==1&&tablero[4]==1&&tablero[5]==1){v1=1;}
-            else if(tablero[6]==1&&tablero[7]==1&&tablero[8]==1){v1=1;}
-            else if(tablero[0]==1&&tablero[3]==1&&tablero[6]==1){v1=1;}
-            else if(tablero[1]==1&&tablero[4]==1&&tablero[7]==1){v1=1;}
-            else if(tablero[2]==1&&tablero[5]==1&&tablero[8]==1){v1=1;}
-            else if(tablero[0]==1&&tablero[4]==1&&tablero[8]==1){v1=1;}
-            else if(tablero[2]==1&&tablero[4]==1&&tablero[6]==1){v1=1;}
-            else{if(tablero.indexOf("o")>-1){alert('Seguid jugando');}}
+        const ganar=()=>{
+            if(tablero[0]=="x"&&tablero[1]=="x"&&tablero[2]=="x"){v1=1;}
+            else if(tablero[3]=="x"&&tablero[4]=="x"&&tablero[5]=="x"){v1=1;}
+            else if(tablero[6]=="x"&&tablero[7]=="x"&&tablero[8]=="x"){v1=1;}
+            else if(tablero[0]=="x"&&tablero[3]=="x"&&tablero[6]=="x"){v1=1;}
+            else if(tablero[1]=="x"&&tablero[4]=="x"&&tablero[7]=="x"){v1=1;}
+            else if(tablero[2]=="x"&&tablero[5]=="x"&&tablero[8]=="x"){v1=1;}
+            else if(tablero[0]=="x"&&tablero[4]=="x"&&tablero[8]=="x"){v1=1;}
+            else if(tablero[2]=="x"&&tablero[4]=="x"&&tablero[6]=="x"){v1=1;}
+            else if (tablero[0]=="o"&&tablero[1]=="o"&&tablero[2]=="o"){v2=1;}
+            else if(tablero[3]=="o"&&tablero[4]=="o"&&tablero[5]=="o"){v2=1;}
+            else if(tablero[6]=="o"&&tablero[7]=="o"&&tablero[8]=="o"){v2=1;}
+            else if(tablero[0]=="o"&&tablero[3]=="o"&&tablero[6]=="o"){v2=1;}
+            else if(tablero[1]=="o"&&tablero[4]=="o"&&tablero[7]=="o"){v2=1;}
+            else if(tablero[2]=="o"&&tablero[5]=="o"&&tablero[8]=="o"){v2=1;}
+            else if(tablero[0]=="o"&&tablero[4]=="o"&&tablero[8]=="o"){v2=1;}
+            else if(tablero[2]=="o"&&tablero[4]=="o"&&tablero[6]=="o"){v2=1;}
+            else{if(p<5){alert('Seguid jugando');}}
         }
-        const ganar2=()=>{
-            if (tablero[0]==2&&tablero[1]==2&&tablero[2]==2){v2=1;}
-            else if(tablero[3]==2&&tablero[4]==2&&tablero[5]==2){v2=1;}
-            else if(tablero[6]==2&&tablero[7]==2&&tablero[8]==2){v2=1;}
-            else if(tablero[0]==2&&tablero[3]==2&&tablero[6]==2){v2=1;}
-            else if(tablero[1]==2&&tablero[4]==2&&tablero[7]==2){v2=1;}
-            else if(tablero[2]==2&&tablero[5]==2&&tablero[8]==2){v2=1;}
-            else if(tablero[0]==2&&tablero[4]==2&&tablero[8]==2){v2=1;}
-            else if(tablero[2]==2&&tablero[4]==2&&tablero[6]==2){v2=1;}
-            else{if(tablero.indexOf("o")>-1){alert('Seguid jugando');}}
-            }
         const pulsarjugador2=()=>{
             let continuar=true;
             alert('Turno del jugador 2');
@@ -96,45 +93,45 @@
                 let c=prompt('Jugador 2:Introduce el número de la columna');
                 if (f==1){
                     if(c==1) {
-                        if(tablero[0]=="o"){tablero[0]=2;continuar=false;}
+                        if(tablero[0]=="_"){tablero[0]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==2){
-                        if(tablero[1]=="o"){tablero[1]=2;continuar=false;}
+                        if(tablero[1]=="_"){tablero[1]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==3){
-                        if(tablero[2]=="o"){tablero[2]=2;continuar=false;}
+                        if(tablero[2]=="_"){tablero[2]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else{alert('Error, has introducido un numero de columna que no existe');}
                 }
                 else if(f==2){
                     if(c==1){
-                        if(tablero[3]=="o"){tablero[3]=2;continuar=false;}
+                        if(tablero[3]=="_"){tablero[3]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==2){
-                        if(tablero[4]=="o"){tablero[4]=2;continuar=false;}
+                        if(tablero[4]=="_"){tablero[4]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==3){
-                        if(tablero[5]=="o"){tablero[5]=2;continuar=false;}
+                        if(tablero[5]=="_"){tablero[5]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else{alert('Error, has introducido un numero de columna que no existe');}
                 }
                 else if(f==3){
                     if(c==1){
-                        if(tablero[6]=="o"){tablero[6]=2;continuar=false;}
+                        if(tablero[6]=="_"){tablero[6]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if(c==2){
-                        if(tablero[7]=="o"){tablero[7]=2;continuar=false;}
+                        if(tablero[7]=="_"){tablero[7]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else if (c==3) {
-                        if(tablero[8]=="o"){tablero[8]=2;continuar=false;}
+                        if(tablero[8]=="_"){tablero[8]="o";continuar=false;}
                         else{alert('Error, la casilla seleccionada está ocupada. Introduzca una libre.')}
                     }
                     else{alert('Error, has introducido un numero de columna que no existe');}
@@ -149,17 +146,17 @@
             for(let i=0;i<5;i++){
                 pulsarjugador1();
                 printBoard();
-                ganar1();
+                ganar();
                 if(v1===1){break;}
-                if(tablero.indexOf("o")<0){alert('Empate');break;}
+                if(p===5){break;}
                 pulsarjugador2();
                 printBoard();
-                ganar2();
+                ganar();
                 if(v2===1){break;}
             }
             if(v1===1){alert('Jugador 1 ha ganado');}
             else if(v2===1){alert('Jugador 2 ha ganado');}
-            else{alert('NOOOOOO')}
+            else{alert('Empate')}
         }
         juego();
     </script>

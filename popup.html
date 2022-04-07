@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #lightboxContainer{
+            /*visibility: hidden;
+            opacity: 0;
+            transition:1s*/
+            display: none;
+        }
+        #overlay{
+            position:fixed;
+            top:0%;
+            left:0%;
+            width:100%;
+            height:100%;
+            background-color:rgba(0, 0, 0, 0.7);
+        }
+        #lightbox{
+            margin:100px auto 0 auto;
+            width:50%;
+            height:50%;
+            padding:16px;
+            border:16px solid orange;
+            background-color:white;
+            overflow:auto;
+            position:relative;
+            z-index:9999;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="enlace">Pulsa aquí</a>
+    <div id="lightboxContainer">
+        <div id="overlay"></div>
+        <div id="lightbox">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+            <a href="#" id="ocultar">Close</a>
+        </div>
+    </div>
+    <script>
+        //Para no tener que darle dos veces al botón porque no pilla el css
+        document.querySelector("#lightboxContainer").style.display="none";
+        const popup=()=>{
+            //Alternador
+            document.querySelector("#lightboxContainer").style.display=="none" ? document.querySelector("#lightboxContainer").style.display="block" : document.querySelector("#lightboxContainer").style.display="none"
+        }
+        //Método más directo
+        //document.querySelector("#enlace").addEventListener("click",()=>{document.querySelector('#lightboxContainer').style.display='block'});
+        //document.querySelector("#ocultar").addEventListener("click",()=>{document.querySelector("#lightboxContainer").style.display="none"});
+        document.querySelector("#enlace").addEventListener("click", popup);
+        document.querySelector("#ocultar").addEventListener("click", popup);
+    </script>
+</body>
+</html>

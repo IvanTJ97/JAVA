@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label{
+            width:150px;
+            display: inline-block;
+        }
+        #noches{
+            margin-bottom:40px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="noches">Introduzca el número de noches:</label>
+        <input type="text" name="noches" id="noches">
+        <select name="destino" id="destino">
+            <option value="oviedo">Oviedo</option>
+            <option value="tokyo">Tokyo</option>
+            <option value="barcelona">Barcelona</option>
+            <option value="madrid">Madrid</option>
+        </select>
+        <input type="button" id="btn" value="Calcular Coste"><br>
+        
+        <label for="hotel">Coste Hotel: </label>
+        <input type="text" name="hotel" id="hotel"><br>
+        <label for="viaje">Coste Viaje: </label>
+        <input type="text" name="viaje" id="viaje"><br>
+        <label for="coche">Coste Alquiler Coche: </label>
+        <input type="text" name="coche" id="coche"><br>
+        <label for="total">COSTE TOTAL: </label>
+        <input type="text" name="total" id="total">
+    </form>
+    <script>
+        const costeHotel=(noches)=>(noches*140);
+        const costeViaje=(noches,destino)=>{
+            let d=0;
+            switch(destino){
+                case "oviedo":
+                    d=15;
+                break;
+                case "tokyo":
+                    d=700;
+                break;
+                case "barcelona":
+                case "madrid":
+                    d=90;
+                break;
+            }
+            if(noches>3){d=d*0.9}
+            return d
+        };
+        const costeCoche=(noches)=>((noches>=7)?noches*40-50:(noches>=3)?noches*40-20:noches*40);
+        const calculo=()=>{
+            const noches=document.querySelector("#noches").value;
+            const destino=document.querySelector("#destino").value;
+            document.querySelector("#hotel").value=costeHotel(noches);
+            document.querySelector("#viaje").value = costeViaje(noches,destino);
+            document.querySelector("#coche").value = costeCoche(noches);
+            document.querySelector("#total").value=costeHotel(noches)+costeViaje(noches,destino)+ costeCoche(noches);
+        };
+        document.querySelector("#btn").addEventListener("click", calculo);
+    </script>
+</body>
+</html>

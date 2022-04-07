@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #result{
+            width:500px;
+        }
+    </style>
+</head>
+<body>
+    <label for="nombre">Nombre del cliente:</label><br>
+    <input type="text" id="nombre" placeholder="Tu nombre"><br>
+    <label for="material">Material de la caja:</label>
+    <select name="material" id="material">
+        <option value="madera">Madera</option>
+        <option value="metal">Metal</option>
+        <option value="tela">Tela</option>
+    </select><br>
+    <label for="size">Seleecione las dimensiones de la caja:</label><br>
+    <input type="radio" name="size" id="size" value="pequeña" checked="checked">Pequeña<br>
+    <input type="radio" name="size" id="size" value="normal">Normal<br>
+    <input type="radio" name="size" id="size" value="grande">Grande<br>
+    <label for="comentario">Comentarios:</label><br>
+    <textarea name="comentario" id="area" placeholder="Introduce tu comntario aquí"></textarea><br>
+    <input type="button" id="btn" value="Enviar">
+    <input type="text" name="result" id="result">
+    <script>
+        const frase=()=>{
+            const nombre=document.querySelector("#nombre").value;
+            const material=document.querySelector("#material").value;
+            const size=document.querySelector("[name=size]:checked").value;
+            const comentario=document.querySelector("#area").value;
+            document.querySelector("#result").value=nombre+" ha pedido una caja de "+material+" y "+size+"."+comentario;
+        }
+        document.querySelector("#btn").addEventListener("click",frase);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*const v=prompt('Introduce un valor');
+        alert(v);*/
+        const a = parseInt(prompt('Introduce un valor'));
+        const b = parseInt(prompt('Introduce otro valor'));
+        const c = prompt('Introduce un operador válido(+,-,*,/)');
+        console.log(a,b,c);
+        const calc=(n1,n2,op)=>{
+            switch(op){
+                case '+':
+                    return n1+n2;
+                    break;
+                case '-':
+                    return n1 - n2;
+                    break;
+                case '*':
+                    return n1 * n2;
+                    break;
+                case '/':
+                    return n1 / n2;
+                    break;
+                default:
+                    return 'Error';
+                    break;
+            }
+        }
+        alert(calc(a,b,c));
+        console.log(calc(a, b, c));
+    </script>
+</body>
+</html>

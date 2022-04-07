@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let characters;collectedCharacters=[];collectedCharacters2=[];
+        const getWomansName=()=>{
+            console.log(characters);
+            const nombresm=characters.filter(obj=>obj.gender=="female").map(obj=>obj.name);
+            console.log(nombresm);
+        }
+        const getSmallerPeople=()=>{
+            const reduccion=characters.map(character=>{
+                return {
+                    ...character,
+                    height:character.height-10
+                }
+            });
+            console.log(reduccion);
+        }
+        const sumaDePeso=()=>{
+            const peso=characters.reduce((acc,el)=>acc+parseInt(el.mass),0);
+            console.log(peso);
+        }
+        const mediaDeAltura=()=>{
+            const altura=characters.reduce((acc,el)=>acc+parseInt(el.height),0);
+            console.log(altura/characters.length);
+        }
+        const collectByIndex=(index)=>{
+            const a=characters[index];
+            collectedCharacters.push(a);
+        }
+        const collectByName=(Name)=>{
+            const b=characters.find(obj=>obj.name==Name);
+            collectedCharacters.push(b);
+        }
+        const removeByName=(Name)=>{
+            const c=collectedCharacters.filter(obj=>obj.name!==Name);
+            return c
+        }
+        const getCharacterFilms=(Name)=>{
+            const d=characters.find(obj=>obj.name==Name);
+            return d.films
+        }
+        const collectByName2=(Name)=>{
+            const object=collectedCharacters2.find(obj=>obj.name==Name);
+            if(object!==undefined){
+                const index=collectedCharacters2.findIndex(obj=>obj.name==Name);
+                collectedCharacters2[index].cantidad++;
+            }
+            else{
+                const e=characters.find(obj=>obj.name==Name);
+                e.cantidad = 1;
+                collectedCharacters2.push(e);
+            }
+        }
+        /* 
+        const collectByName=(Name)=>{
+            const character=characters.find(obj=>obj.name==Name);
+            const characterDeLaCollection=collectedCharacters.find(c=>c.name==Name);
+            characterDeLaCollection ? characterDeLaCollection.cantidad++ : collectedCharacters.push({...character, cantidad:1});
+            console.log(collectedCharacters2);
+        }
+        */
+        const mediaDeAltura2=()=>{
+            const media2=collectedCharacters2.reduce((acc,el)=>acc+parseInt(el.height),0);
+            console.log(media2/collectedCharacters2.length);
+        }
+        const removeByName2=(Name)=>{
+            const v=collectedCharacters2.filter(obj=>obj.name!==Name);
+            return v
+        }
+        fetch('https://swapi.dev/api/people')
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                characters = data.results;
+                // Aquí ejecutaremos las llamadas a las funciones que definiremos más arriba
+                getWomansName();
+                getSmallerPeople();
+                sumaDePeso();
+                mediaDeAltura();
+                collectByIndex(1);
+                collectByName("Darth Vader");
+                console.log(collectedCharacters);
+                console.log(removeByName("C-3PO"));
+                console.log(getCharacterFilms("Darth Vader"));
+                collectByName2("C-3PO");
+                collectByName2("Darth Vader");
+                collectByName2("C-3PO");
+                collectByName2("C-3PO");
+                collectByName2("Darth Vader");
+                collectByName2("Leia Organa");
+                console.log(collectedCharacters2);
+                mediaDeAltura2();
+                console.log(removeByName2("C-3PO"));
+            });
+
+    </script>
+</body>
+</html>

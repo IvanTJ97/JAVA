@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+        input{
+            margin: 25px 10px 25px 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Cuestionario</h1>
+    <form>
+        <label for="Q1">¿Qué superhéroe es el mas poderoso?</label><br>
+        <span><input type="radio" class="bien" id="heroe" name="heroe">La Masa</span><br>
+        <span><input type="radio" id="heroe" name="heroe">Hulk</span><br>
+        <label for="Q2">¿En qué consiste el sentido arácnido?</label><br>
+        <span><input type="radio" id="sentido" name="sentido">Capacidad de tejer telas de araña</span><br>
+        <span><input type="radio" id="sentido" name="sentido">Percepción de peligro inminente</span><br>
+        <span><input type="radio" class="bien" id="sentido" name="sentido">Ambas son correctas</span><br>
+        <label for="Q3">¿Cuál es el verdadero nombre de Batman?</label><br>
+        <span><input type="radio" id="nombre" name="nombre">Clark Kent</span><br>
+        <span><input type="radio" class="bien" id="nombre" name="nombre">Bruce Wayne</span><br>
+        <span><input type="radio" id="nombre" name="nombre">Peter Parker</span><br>
+        <input type="button" id="btn" value="Comprobar">
+    </form>
+    <script>
+        document.querySelector("#btn").addEventListener("click",()=>{
+        document.querySelectorAll('input[type=radio]:checked').forEach(obj=>{
+            if(obj.classList.contains("bien")){obj.closest("span").style.background="green"}
+            else{obj.closest("span").style.background="red"}})});
+    </script>
+</body>
+</html>

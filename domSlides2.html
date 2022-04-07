@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<style>
+    *{box-sizing: border-box;}
+    div{height: 256px;}
+    .visor{width: 256px; overflow: hidden;}
+    .container{width: 768px; display: flex; flex-direction: row;}
+    .slides{width: 256px; transform:scale(0); transition: 0.5s;}
+    .slide1{background-image: url(tuxes/PinguLinux_Homer.png);}
+    .slide2{background-image: url(tuxes/PinguLinux_Ying_Yang.png);}
+    .slide3{background-image: url(tuxes/PinguLinux_Sonic.png);}
+    .visible{transform:scale(1)}
+    .menu{
+        position: absolute;
+        height: 256px;
+        width: 256px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .botonizq,.botonder{width:50px; z-index: 999;}
+    .botonizq:hover,.botonder:hover{
+        background-color: grey;
+        opacity: 0.2; 
+        transition: 0.5s;}
+    .botonder img,.botonizq img{margin: 95px 10px 95px 10px;}
+    .botonizq img{transform: rotate(180deg);}
+</style>
+</head>
+<body> 
+    <div class="menu">
+        <div class="botonizq"><img src="https://images.vexels.com/media/users/3/136987/isolated/lists/7fbb17ce79710b1d578b02cc02da8592-punta-de-flecha-derecha-delgada.png" style="width: 35px; height: 35px;"></div>
+        <div class="botonder"><img src="https://images.vexels.com/media/users/3/136987/isolated/lists/7fbb17ce79710b1d578b02cc02da8592-punta-de-flecha-derecha-delgada.png" style="width: 35px; height: 35px;"></div>
+    </div>
+    <div class="visor">
+        <div class="container">
+            <div class="slides"></div>
+            <div class="slides"></div>
+            <div class="slides"></div>
+        </div>
+    </div><br>
+<script>
+    let i=1;j=0;
+    const avanza=()=>{
+        clearTimeout(intervalo);
+        document.querySelectorAll(".slides").forEach(obj =>{obj.classList.remove("slide"+i,"visible");});
+        (j===document.querySelectorAll(".slides").length-1)?j=0:j++;
+        document.querySelector(".container").style.marginLeft=-256*j+"px";
+        (i===document.querySelectorAll(".slides").length)?i=1:i++;
+        document.querySelector(".slides:nth-child("+i+")").classList.add("slide"+i,"visible");
+        intervalo=setTimeout(avanza,3000);
+    }
+    const retrocede=()=>{
+        clearTimeout(intervalo);
+        document.querySelectorAll(".slides").forEach(obj=>{obj.classList.remove("slide"+i,"visible"); });
+        (j===0)?j=document.querySelectorAll(".slides").length-1:j--;
+        document.querySelector(".container").style.marginLeft=-256*j+"px";
+        (i===1)?i=document.querySelectorAll(".slides").length:i--;
+        document.querySelector(".slides:nth-child("+i+")").classList.add("slide"+i,"visible");
+        intervalo=setTimeout(avanza,3000);
+    }
+    document.querySelector(".slides:nth-child("+i+")").classList.add("slide"+i, "visible");
+    document.querySelector(".botonder").addEventListener("click",avanza);
+    document.querySelector(".botonizq").addEventListener("click",retrocede);
+    let intervalo=setTimeout(avanza,3000);
+</script>
+</body>
+</html>

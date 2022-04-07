@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <input type="number" name="numero" id="numero"><br>
+    <input type="button" id="btn" value="Prueba">
+    <label for="Intentos">Intentos restantes:</label>
+    <input type="number" name="" id="intentos" contenteditable="false" value="3">
+    <br>
+    <input type="text" name="result" id="result">
+    <script>
+        const a=Math.floor(Math.random()*(6));
+        console.log(a);
+        const juego=()=>{
+            const b=document.querySelector("#numero").value;
+            document.querySelector("#result").value=(b==a)?"Has acertado":"Has fallado";
+        }
+        document.querySelector("#btn").addEventListener("click",juego);
+    </script>
+</body>
+</html>

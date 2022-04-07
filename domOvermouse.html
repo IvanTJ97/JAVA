@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            width: 250px;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+        }
+        .inner1{
+            height: 50%;
+            background: red;
+        }
+        .inner2{
+            height: 50%;
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="inner1" id="div1"></div>
+        <div class="inner2" id="div2"></div>
+    </div>
+    <script>
+        const click=()=>{
+            document.querySelector("#div2").innerHTML="<p>Has hecho mouse over la capa 1.</p>";
+        }
+        document.querySelector("#div1").addEventListener("mouseover",click)
+    </script>
+</body>
+</html>

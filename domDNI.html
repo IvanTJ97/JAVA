@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="dni">Introduce tu DNI sin letra: </label>
+        <input type="text" name="dni" id="dni"><br>
+        <label for="letra">La letra del DNI es:</label>
+        <input type="text" name="letra" id="letra"><br>
+        <input type="button" id="btn" value="Calcular">
+    </form>
+    <script>
+        const calcular=()=>{
+            const dni=document.querySelector("#dni").value;
+            const letras="TRWAGMYFPDXBNJZSQVHLCKE";
+            if(dni.length===8&&!/[a-zA-Z]/.test(dni)){
+                document.querySelector("#letra").value=letras.charAt(dni%23);
+            }
+            else{document.querySelector("#letra").value="Error"}
+        }
+        document.querySelector("#btn").addEventListener("click",calcular);
+    </script>
+</body>
+</html>

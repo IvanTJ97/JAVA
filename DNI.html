@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const abc= "TRWAGMYFPDXBNJZSQVHLCKE";
+        const dni=parseInt(prompt('Introduce el número del DNI'));
+        console.log(dni);
+        const letradni=(dni)=>{
+            if(isNaN(dni)===false&&dni.toString().length===8){
+                let d=dni%23;
+                let l=abc.charAt(d);
+                return l
+            }
+            else{return null}
+        }
+        console.log(letradni(dni));
+    </script>
+</body>
+</html>

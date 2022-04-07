@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let tablero=["_","_","_","_","_","_","_","_","_"];v1=0;v2=0;
+        const printBoard = () => {
+                alert(tablero[0] + "|" + tablero[1] + "|" + tablero[2] + "\n" + tablero[3] + "|" + tablero[4] + "|" + tablero[5] + "\n" + tablero[6] + "|" + tablero[7] + "|" + tablero[8]);
+            };
+        const tresRayasIA=()=>{
+            //ataque ganar
+            if (tablero[0] == "o") {
+                if (tablero[1] == "o") { if (tablero[2] == "_") { tablero[2] = "o" } }
+                else if (tablero[3] == "o") { if (tablero[6] == "_") { tablero[6] = "o" } }
+                else if (tablero[4] == "o") { if (tablero[8] == "_") { tablero[8] = "o" } }
+            }
+            else if (tablero[1] == "o") {
+                if (tablero[2] == "o") { if (tablero[0] == "_") { tablero[0] = "o" } }
+                else if (tablero[4] == "o") { if (tablero[7] == "_") { tablero[7] = "o" } }
+            }
+            else if (tablero[2] == "o") {
+                if (tablero[0] == "o") { if (tablero[1] == "_") { tablero[1] = "o" }}
+                else if (tablero[5] == "o") { if (tablero[8] == "_") { tablero[8] = "o" }}
+                else if (tablero[4] == "o") { if (tablero[6] == "_") { tablero[6] = "o" }}
+            }
+            else if (tablero[3] == "o") {
+                if (tablero[4] == "o") { if (tablero[5] == "_") { tablero[5] = "o" }}
+                else if (tablero[0] == "o") { if (tablero[6] == "_") { tablero[6] = "o" }}
+            }
+            else if (tablero[4] == "o"){
+                if(tablero[5]=="o"){if(tablero[3]=="_"){tablero[3]="o"}}
+                else if(tablero[7]=="o"){if(tablero[1]=="_"){tablero[1]="o"}}
+                else if(tablero[8]=="o"){if(tablero[0]=="_"){tablero[0]="o"}}
+                else if(tablero[6]=="o"){if(tablero[2]=="_"){tablero[2]="o"}}
+            }
+            else if(tablero[5]=="o"){
+                if(tablero[3]=="o"){if(tablero[4]=="_"){tablero[4]="o"}}
+                else if(tablero[8]=="o"){if(tablero[2]=="_"){tablero[2]="o"}}
+            }
+            else if(tablero[6]=="o"){
+                if(tablero[0]=="o"){if(tablero[3]=="_"){tablero[3]="o"}}
+                else if(tablero[7]=="o"){if(tablero[8]=="_"){tablero[8]="o"}}
+                else if(tablero[2]=="o"){if(tablero[4]=="_"){tablero[4]="o"}}
+            }
+            else if(tablero[7]=="o"){
+                if(tablero[8]=="o"){if(tablero[6]=="_"){tablero[6]="o"}}
+                else if(tablero[1]=="o"){if(tablero[4]=="_"){tablero[4]="o"}}
+            }
+            else if(tablero[8]=="o"){
+                if(tablero[6]=="o"){if(tablero[7]=="_"){tablero[7]="o"}}
+                else if(tablero[2]=="o"){if(tablero[5]=="_"){tablero[5]="o"}}
+                else if(tablero[0]=="o"){if(tablero[4]=="_"){tablero[4]="o"}}
+            }
+            //defensa
+            else if(tablero[0]=="x"){
+                if(tablero[1]=="x"){if(tablero[2]=="_"){tablero[2]="o"}}
+                else if(tablero[3]=="x"){if(tablero[6]=="_"){tablero[6]="o"}}
+                else if(tablero[4]=="x"){if(tablero[8]=="_"){tablero[8]="o"}}
+            }
+            else if(tablero[1]=="x"){
+                if(tablero[2]=="x"){if(tablero[0]=="_"){tablero[0]="o"}}
+                else if(tablero[4]=="x"){if(tablero[7]=="_"){tablero[7]="o"}}
+            }
+            else if(tablero[2]=="x"){
+                if(tablero[0]=="x"){if(tablero[1]=="_"){tablero[1]="o"}}
+                else if(tablero[5]=="x"){if(tablero[8]=="_"){tablero[8]="o"}}
+                else if(tablero[4]=="x"){if(tablero[6]=="_"){tablero[6]="o"}}
+            }
+            else if(tablero[3]=="x"){
+                if(tablero[4]=="x"){if(tablero[5]=="_"){tablero[5]="o"}}
+                else if(tablero[0]=="x"){if(tablero[6]=="_"){tablero[6]="o"}}
+            }
+            else if(tablero[4]=="x"){
+                if(tablero[5]=="x"){if(tablero[3]=="_"){tablero[3]="o"}}
+                else if(tablero[7]=="x"){if(tablero[1]=="_"){tablero[1]="o"}}
+                else if(tablero[8]=="x"){if(tablero[0]=="_"){tablero[0]="o"}}
+                else if(tablero[6]=="x"){if(tablero[2]=="_"){tablero[2]="o"}}
+            }
+            else if(tablero[5]=="x"){
+                if(tablero[3]=="x"){if(tablero[4]=="_"){tablero[4]="o"}}
+                else if(tablero[8]=="x"){if(tablero[2]=="_"){tablero[2]="o"}}
+            }
+            else if(tablero[6]=="x"){
+                if(tablero[0]=="x"){if(tablero[3]=="_"){tablero[3]="o"}}
+                else if(tablero[7]=="x"){if(tablero[8]=="_"){tablero[8]="o"}}
+                else if(tablero[2]=="x"){if(tablero[4]=="_"){tablero[4]="o"}}
+            }
+            else if(tablero[7]=="x"){
+                if(tablero[8]=="x"){if(tablero[6]=="_"){tablero[6]="o"}}
+                else if(tablero[1]=="x"){if(tablero[4]=="_"){tablero[4]="o"}}
+            }
+            else if(tablero[8]=="x"){
+                if(tablero[6]=="x"){if(tablero[7]=="_"){tablero[7]="o"}}
+                else if(tablero[2]=="x"){if(tablero[5]=="_"){tablero[5]="o"}}
+                else if(tablero[0]=="x"){if(tablero[4]=="_"){tablero[4]="o"}}
+            }
+            //ataque rand 
+            else if(tablero[4]=="_"){tablero[4]="o"}
+            else if(tablero[0]=="_"||tablero[2]=="_"||tablero[6]=="_"||tablero[8]=="_"){
+                let c=true;
+                let arr=[0,2,6,8]
+                while(c){
+                    let rand=Math.floor(Math.random()*(4)+1);
+                    if(tablero[rand]=="_"){tablero[arr[rand]]="o";c=false;}
+                }
+            }
+            else{
+                let c=true;
+                let arr=[1,3,5,7];
+                while (c) {
+                    let rand=Math.floor(Math.random()*(4)+1);
+                    if (tablero[rand]=="_"){tablero[arr[rand]]="o";c=false;}
+                }
+            }
+        }
+        const tresRayasIA2 = () => {
+                let continuar = true;
+                alert('Turno de la CPU');
+                while (continuar) {
+                    //ataque ganar
+                    if (tablero[0] == "o") {
+                        if (tablero[1] == "o") { if (tablero[2] == "_") { tablero[2] = "o"; continuar = false } else { continue } }
+                        else if (tablero[3] == "o") { if (tablero[6] == "_") { tablero[6] = "o"; continuar = false } else { continue } }
+                        else if (tablero[4] == "o") { if (tablero[8] == "_") { tablero[8] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[1] == "o") {
+                        if (tablero[2] == "o") { if (tablero[0] == "_") { tablero[0] = "o"; continuar = false } else { continue } }
+                        else if (tablero[4] == "o") { if (tablero[7] == "_") { tablero[7] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[2] == "o") {
+                        if (tablero[0] == "o") { if (tablero[1] == "_") { tablero[1] = "o"; continuar = false } else { continue } }
+                        else if (tablero[5] == "o") { if (tablero[8] == "_") { tablero[8] = "o"; continuar = false } else { continue } }
+                        else if (tablero[4] == "o") { if (tablero[6] == "_") { tablero[6] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[3] == "o") {
+                        if (tablero[4] == "o") { if (tablero[5] == "_") { tablero[5] = "o"; continuar = false } else { continue } }
+                        else if (tablero[0] == "o") { if (tablero[6] == "_") { tablero[6] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[4] == "o") {
+                        if (tablero[5] == "o") { if (tablero[3] == "_") { tablero[3] = "o"; continuar = false } else { continue } }
+                        else if (tablero[7] == "o") { if (tablero[1] == "_") { tablero[1] = "o"; continuar = false } else { continue } }
+                        else if (tablero[8] == "o") { if (tablero[0] == "_") { tablero[0] = "o"; continuar = false } else { continue } }
+                        else if (tablero[6] == "o") { if (tablero[2] == "_") { tablero[2] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[5] == "o") {
+                        if (tablero[3] == "o") { if (tablero[4] == "_") { tablero[4] = "o"; continuar = false } else { continue } }
+                        else if (tablero[8] == "o") { if (tablero[2] == "_") { tablero[2] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[6] == "o") {
+                        if (tablero[0] == "o") { if (tablero[3] == "_") { tablero[3] = "o"; continuar = false } else { continue } }
+                        else if (tablero[7] == "o") { if (tablero[8] == "_") { tablero[8] = "o"; continuar = false } else { continue } }
+                        else if (tablero[2] == "o") { if (tablero[4] == "_") { tablero[4] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[7] == "o") {
+                        if (tablero[8] == "o") { if (tablero[6] == "_") { tablero[6] = "o"; continuar = false } else { continue } }
+                        else if (tablero[1] == "o") { if (tablero[4] == "_") { tablero[4] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[8] == "o") {
+                        if (tablero[6] == "o") { if (tablero[7] == "_") { tablero[7] = "o"; continuar = false } else { continue } }
+                        else if (tablero[2] == "o") { if (tablero[5] == "_") { tablero[5] = "o"; continuar = false } else { continue } }
+                        else if (tablero[0] == "o") { if (tablero[4] == "_") { tablero[4] = "o"; continuar = false } else { continue } }
+                    }
+                    //defensa
+                    else if (tablero[0] == "x") {
+                        if (tablero[1] == "x") { if (tablero[2] == "_") { tablero[2] = "o"; continuar = false } else { continue } }
+                        else if (tablero[3] == "x") { if (tablero[6] == "_") { tablero[6] = "o"; continuar = false } else { continue } }
+                        else if (tablero[4] == "x") { if (tablero[8] == "_") { tablero[8] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[1] == "x") {
+                        if (tablero[2] == "x") { if (tablero[0] == "_") { tablero[0] = "o"; continuar = false } else { continue } }
+                        else if (tablero[4] == "x") { if (tablero[7] == "_") { tablero[7] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[2] == "x") {
+                        if (tablero[0] == "x") { if (tablero[1] == "_") { tablero[1] = "o"; continuar = false } else { continue } }
+                        else if (tablero[5] == "x") { if (tablero[8] == "_") { tablero[8] = "o"; continuar = false } else { continue } }
+                        else if (tablero[4] == "x") { if (tablero[6] == "_") { tablero[6] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[3] == "x") {
+                        if (tablero[4] == "x") { if (tablero[5] == "_") { tablero[5] = "o"; continuar = false } else { continue } }
+                        else if (tablero[0] == "x") { if (tablero[6] == "_") { tablero[6] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[4] == "x") {
+                        if (tablero[5] == "x") { if (tablero[3] == "_") { tablero[3] = "o"; continuar = false } else { continue } }
+                        else if (tablero[7] == "x") { if (tablero[1] == "_") { tablero[1] = "o"; continuar = false } else { continue } }
+                        else if (tablero[8] == "x") { if (tablero[0] == "_") { tablero[0] = "o"; continuar = false } else { continue } }
+                        else if (tablero[6] == "x") { if (tablero[2] == "_") { tablero[2] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[5] == "x") {
+                        if (tablero[3] == "x") { if (tablero[4] == "_") { tablero[4] = "o"; continuar = false } else { continue } }
+                        else if (tablero[8] == "x") { if (tablero[2] == "_") { tablero[2] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[6] == "x") {
+                        if (tablero[0] == "x") { if (tablero[3] == "_") { tablero[3] = "o"; continuar = false } else { continue } }
+                        else if (tablero[7] == "x") { if (tablero[8] == "_") { tablero[8] = "o"; continuar = false } else { continue } }
+                        else if (tablero[2] == "x") { if (tablero[4] == "_") { tablero[4] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[7] == "x") {
+                        if (tablero[8] == "x") { if (tablero[6] == "_") { tablero[6] = "o"; continuar = false } else { continue } }
+                        else if (tablero[1] == "x") { if (tablero[4] == "_") { tablero[4] = "o"; continuar = false } else { continue } }
+                    }
+                    else if (tablero[8] == "x") {
+                        if (tablero[6] == "x") { if (tablero[7] == "_") { tablero[7] = "o"; continuar = false } else { continue } }
+                        else if (tablero[2] == "x") { if (tablero[5] == "_") { tablero[5] = "o"; continuar = false } else { continue } }
+                        else if (tablero[0] == "x") { if (tablero[4] == "_") { tablero[4] = "o"; continuar = false } else { continue } }
+                    }
+                    //ataque rand 
+                    else if (tablero[4] == "_") { tablero[4] = "o"; continuar = false }
+                    else if (tablero[0] == "_") { tablero[0] = "o"; continuar = false }
+                    else if (tablero[2] == "_") { tablero[2] = "o"; continuar = false }
+                    else if (tablero[6] == "_") { tablero[6] = "o"; continuar = false }
+                    else if (tablero[8] == "_") { tablero[8] = "o"; continuar = false }
+                    else if (tablero[1] == "_") { tablero[1] = "o"; continuar = false }
+                    else if (tablero[3] == "_") { tablero[3] = "o"; continuar = false }
+                    else if (tablero[5] == "_") { tablero[5] = "o"; continuar = false }
+                    else if (tablero[7] == "_") { tablero[7] = "o"; continuar = false }
+                }
+            }
+        const juego=()=>{
+            printBoard();
+            tresRayasIA();
+            printBoard();
+            tresRayasIA2();
+            printBoard();
+        }
+        juego();
+    </script>
+</body>
+</html>

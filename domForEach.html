@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <p>Cuales de los siguientes lenguajes son orientados a objetos: <span class="respuesta">Java</span>, VB6, <span class="respuesta">C++</span>, C, <span class="respuesta">C#</span>, Cobol ?</p>
+    <input type="button" id="btn" value="Ver Resultado"> <br><br><br>
+    <input type="number" class="calculo">
+    <input type="number" class="calculo">
+    <input type="number" class="calculo">
+    <input type="button" id="waton" value="Calcular"> <br>
+    <div class="resultado"></div>
+    <output name="res"></output>
+    <script>
+        document.querySelector("#btn").addEventListener("click",()=>{
+            document.querySelectorAll(".respuesta").forEach(obj=>obj.style.backgroundColor="red");
+        })
+        document.querySelector("#waton").addEventListener("click",()=>{
+            let a=0;
+            document.querySelectorAll(".calculo").forEach(obj=>a+=parseInt(obj.value));
+            document.querySelector(".resultado").innerHTML=a;
+            document.querySelector("output").innerHTML=a;
+        })
+    </script>
+</body>
+</html>

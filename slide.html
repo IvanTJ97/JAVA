@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            box-sizing:border-box;
+        }
+        .visor{
+            width:512px;
+            overflow:hidden;
+        }
+        .fondo{
+            width:512px;
+        }
+        .fondo1{
+            background-image:url(tuxes/PinguLinux_Celula.png);
+        }
+        .fondo2{
+            background-image:url(tuxes/PinguLinux_Viking2.png);
+        }
+        .fondo3{
+            background-image:url(tuxes/PinguLinux_Naruto.png);
+        }
+        .container{
+            width:1536px;
+            height:512px;
+            display:flex;
+            flex-direction:row;
+            transition:1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="visor">
+        <div class="container">
+            <div class="fondo1 fondo"></div>
+            <div class="fondo2 fondo"></div>
+            <div class="fondo3 fondo"></div>
+        </div>
+    </div>
+    <input type="button" id="btn" value="Move Slide">
+    <script>
+        let i=1;
+        const move=()=>{
+            document.querySelector(".container").style.marginLeft=-512*i+"px";
+            (i<2)?i++:i=0;}
+        document.querySelector("#btn").addEventListener("click",move);
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #imagen1{
+            width: 49%;
+            height: 750px;        
+        }
+        #imagen2{
+            width: 49%;
+            height: 750px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.kym-cdn.com/entries/icons/facebook/000/034/581/Untitled-5.jpg" id="imagen1">
+    <img src="https://i.pinimg.com/736x/78/e7/e9/78e7e98c29b57dd94411707f2add6f65.jpg" id="imagen2">
+    <script>
+        const foto1=document.querySelector("#imagen1")
+        const foto2=document.querySelector("#imagen2");
+        const hola="https://i.kym-cdn.com/entries/icons/facebook/000/034/581/Untitled-5.jpg";
+        const adios="https://i.kym-cdn.com/entries/icons/mobile/000/034/135/adios.jpg";
+        const marge1="https://i.pinimg.com/736x/78/e7/e9/78e7e98c29b57dd94411707f2add6f65.jpg";
+        const marge2="https://static.wikia.nocookie.net/memes-pedia/images/0/0d/Marge_Krumping.jpg/revision/latest/top-crop/width/360/height/450?cb=20170411003149&path-prefix=es";
+        
+        foto1.addEventListener("click",()=>{
+            foto1.src==hola?foto1.src=adios:foto1.src=hola;
+        });
+        foto2.addEventListener("click",()=>{
+                foto2.src==marge1?foto2.src=marge2:foto2.src=marge1;
+        });
+    </script>
+</body>
+</html>

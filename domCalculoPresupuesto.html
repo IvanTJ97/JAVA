@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .p1,.p2,.p3{
+            border: 1px solid black;
+            width: 35%;
+        }
+        label{
+            padding-left: 10px;
+        }
+        p{
+            padding-left: 10px;
+        }
+        .resultado{
+            font-size: 50px;
+            background-color: salmon;
+            width: 35%;
+            height: 150px;
+            text-align: center;
+            padding-top: 35px;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div class="p1">
+            <label for="Q1">Diseño</label><br>
+            <p><input type="radio" name="Q1" id="cliente" value="120">El cliente me suministra el diseño</p>
+            <p><input type="radio" name="Q1" id="yo" value="200">Yo me encargo del diseño</p>
+        </div>
+        <div class="p2">
+            <label for="Q2">Tienda</label><br>
+            <p><input type="radio" name="Q2" id="nocarrito" value="150">La página no incorpora un carrito de la compra</p>
+            <p><input type="radio" name="Q2" id="carrito" value="250">La página incorpora un carrito de la compra</p>
+        </div>
+        <div class="p3">
+            <label for="Q3">Membership</label><br>
+            <p><input type="radio" name="Q3" id="nomember" value="150">La página no permite suscripción</p>
+            <p><input type="radio" name="Q3" id="member" value="250">La página permite suscripción</p>
+        </div>
+    </form>
+    <div class="resultado"></div>
+    <script>
+        document.querySelectorAll("input[type=radio]").forEach(obj=>{
+            obj.addEventListener("click",()=>{calculo()})
+        })
+        const calculo=()=>{
+            let a=0;
+            document.querySelectorAll("input[type=radio]:checked").forEach(obj=>a+=parseInt(obj.value));
+            document.querySelector(".resultado").innerHTML=a+"€";
+        }
+    </script>
+</body>
+</html>

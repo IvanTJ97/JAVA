@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .color{
+            width: 500px;
+            height: 500px;
+        }
+        .color select{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p>Cuales de los siguientes lenguajes son orientados a objetos: <span class="respuesta">Java</span>, VB6, <span class="respuesta">C++</span>, C,<span class="respuesta">C#</span>, Cobol?
+    </p>
+    <input type="button" id="btn" value="Ver Resultado">
+    <div class="color">
+        <select name="colores" id="colores">
+            <option value="white">Seleccione un color</option>
+            <option value="pink">Rosa</option>
+            <option value="blue">Azul</option>
+            <option value="red">Rojo</option>
+            <option value="green">Verde</option>
+            <option value="orange">Naranja</option>
+            <option value="#8A2BE2">Lila</option>
+        </select>
+    </div>
+    <script>
+        const resultado=()=>{
+            const respuestas=document.querySelectorAll(".respuesta");
+            for(let i=0;i<respuestas.length;i++){
+                respuestas[i].style.backgroundColor="red";
+            }
+        }
+        const cambio=()=>{
+            document.querySelector(".color").style.backgroundColor=document.querySelector("#colores").value;
+        }
+        document.querySelector("#btn").addEventListener("click",resultado);
+        document.querySelector("#colores").addEventListener("change",cambio);
+    </script>
+</body>
+</html>

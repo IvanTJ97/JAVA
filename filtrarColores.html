@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+<link rel="stylesheet" href="#">
+<style>
+    *{box-sizing: border-box;}
+    .container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 900px;
+        margin: auto;
+    }
+    .colores{
+        width: 250px;
+        height: 250px;
+        margin: 20px;
+        border: 1px solid black;
+    }
+    .lila{background-color: blueviolet;}
+    .naranja{background-color: orange;}
+    .verde{background-color: greenyellow;}
+    .amarillo{background-color: yellow;}
+    .rojo{background-color: red;}
+    .ocultar{display: none;}
+</style>
+</head>
+<body> 
+    <h1>Filtro</h1>
+    <p>Filtrar por: 
+        <a href="#" color="">Todos</a>
+        <a href="#" color="lila">Lila</a>
+        <a href="#" color="naranja">Naranja</a>
+        <a href="#" color="verde">Verde</a>
+        <a href="#" color="amarillo">Amarillo</a>
+        <a href="#" color="rojo">Rojo</a>
+    </p>
+    <div class="container">
+        <div class="colores lila"></div>
+        <div class="colores lila"></div>
+        <div class="colores naranja"></div>
+        <div class="colores verde"></div>
+        <div class="colores verde"></div>
+        <div class="colores lila"></div>
+        <div class="colores naranja"></div>
+        <div class="colores rojo"></div>
+        <div class="colores naranja"></div>
+        <div class="colores rojo"></div>
+        <div class="colores naranja"></div>
+        <div class="colores amarillo"></div>
+    </div>
+<script>
+    const Filtrar=(color)=>{
+        document.querySelectorAll(".colores").forEach(obj=>obj.classList.add("ocultar"));
+        (!color)?document.querySelectorAll(".colores").forEach(obj=>obj.classList.remove("ocultar")):
+        document.querySelectorAll("."+color).forEach(obj=>obj.classList.remove("ocultar"));
+    }
+    document.querySelectorAll("a").forEach(obj=>{
+        obj.addEventListener("click",()=>{
+            Filtrar(obj.getAttribute("color"));
+        })
+    })
+</script>
+</body>
+</html>

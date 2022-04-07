@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const formulario=()=>{
+            let nombre=prompt('Introduzca su nombre:');
+            let continuar=true;
+            while(continuar){
+                while(/\d/.test(nombre)){
+                    nombre = prompt('El nombre introducido no es correcto porque contiene números, por favor introduzca un nombre válido:');
+                }
+                let conf=prompt('¿El nombre introducido '+nombre.charAt(0).toUpperCase()+nombre.slice(1)+' es correcto?(Si/No)').toLowerCase();
+                if(conf==='si'){continuar=false}
+                else if(conf==='no'){nombre=prompt('Introduzca su nombre correcto:')}
+                else{alert('Error');};
+            }
+            alert('Puede continuar');
+        }
+        formulario();
+    </script>
+</body>
+</html>

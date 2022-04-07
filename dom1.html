@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form{
+            margin-bottom: 25px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="euros">Euros:</label>
+        <input type="number" id="euros"><br>
+        <label for="dolares">Dolares:</label>
+        <input type="text" id="dolares"><br>
+        <input type="button" id="btn1" value="Convertir">
+    </form>
+    <form>
+        <label for="celsius">Grados centígrados:</label>
+        <input type="number" id="celsius"><br>
+        <label for="farent">Grados Farenheit</label>
+        <input type="number" id="farent"><br>
+        <input type="button" id="btn2" value="Convertir C->F">
+        <input type="button" id="btn3" value="Convertir F->C">
+    </form>
+    <script>
+        const calcular1=()=>{
+            document.querySelector("#dolares").value=document.querySelector("#euros").value*2;
+        }
+        const calcular2=()=>{
+            document.querySelector("#farent").value= document.querySelector("#celsius").value*9/5+32;
+        }
+        const calcular3=()=>{
+            const grados=document.querySelector("#farent").value;
+            document.querySelector("#celsius").value=(grados-32)*5/9;
+        }
+        document.querySelector("#btn1").addEventListener("click", calcular1);
+        document.querySelector("#btn2").addEventListener("click",calcular2);
+        document.querySelector("#btn3").addEventListener("click",calcular3);
+    </script>
+</body>
+</html>

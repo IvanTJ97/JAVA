@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,td,tr{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td><input type="radio" name="tabla"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="tabla"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+        <tr>
+            <td><input type="radio" name="tabla"></td>
+            <td>txt2</td>
+            <td>txt3</td>
+        </tr>
+    </table>
+    <script>
+        document.querySelectorAll("tr").forEach(obj=>{
+            obj.addEventListener("click",obj2=>{
+                document.querySelectorAll("tr").forEach(obj3=>{
+                    obj3.style.background="white";})
+                obj.closest("tr").style.background="green";
+                obj.querySelector("input[type=radio]").checked=true;});});  
+    </script>
+</body>
+</html>

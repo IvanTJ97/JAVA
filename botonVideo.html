@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .video{
+            height: 500px;
+            width: 500px;
+            background: red;
+            position: relative;
+        }
+        #boton{
+            bottom: 0;
+            right: 0;
+            position: absolute;
+            width: 75px;
+            height: 60px;
+            text-align: center;
+            background-color: black;
+            opacity: .5;
+            color: white;
+            margin-top: 45%;
+        }
+        /*bottom: 0; right: 0; position: absolute; width: 75px; height: 60px; text-align: center; background-color: black; opacity: .5; color: white; margin-top: 45% */
+    </style>
+</head>
+<body>
+    <div class="video"><div id="boton"></div></div>
+    <video src="" muted></video>
+    <script>
+        const boton=document.querySelector("#boton");
+        boton.innerHTML=("<p>Mute</p>");
+        boton.addEventListener("click",()=>{
+            if(boton.innerHTML=="<p>Mute</p>"){boton.innerHTML="<p>Unmute</p>"}
+            else{boton.innerHTML="<p>Mute</p>"}
+        });
+    </script>
+</body>
+</html>

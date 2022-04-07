@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const juego=()=>{
+            let continuar=true;
+            while(continuar){
+                const rand=Math.floor(Math.random()*(2)+1);
+                let l=0;
+                let a=prompt('Escoge una puerta(Izq o Der)').toLowerCase();
+                if(a==='izq'){l=1;(rand===l?alert('Continua'):continuar=false);}
+                else if(a==='der'){l=2;(rand===l?alert('Continua'):continuar=false)}
+                else{a=prompt('Por favor, introduce un valor válido(Izq o Der)').toLowerCase();}
+            }
+            alert('Iso la morision');
+        }
+        juego();
+    </script>
+</body>
+</html>
